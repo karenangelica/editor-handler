@@ -1,0 +1,48 @@
+{
+  "name": "EditorHandler",
+  "version": "1.0.0",
+  "main": "main.js",
+  "author": "Nexas America",
+  "description": "Editor Handler by Nexas America",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "dist": "electron-builder --win"
+  },
+  "dependencies": {
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.myapp",
+    "win": {
+      "icon": "assets/excellerant-original.ico",
+      "target": [
+        "portable",
+        "nsis"
+      ]
+    },
+    "portable": {
+      "artifactName": "editor_portable.exe",
+      "unpackDirName": "0ujssxh0cECutqzMgbtXSGnjorm"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": true,
+      "artifactName": "file_handler.exe"
+    },
+    "files": [
+      "dist/**/*",
+      "assets/**/*",
+      "main.js",
+      "package.json",
+      "index.html",
+      "preload.js"
+    ],
+    "directories": {
+      "output": "dist"
+    }
+  }
+}
